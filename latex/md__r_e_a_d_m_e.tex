@@ -1,0 +1,138 @@
+\chapter{Banking Application }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Banking Application@{Banking Application}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+This project is a C++ console application for projecting the growth of an investment over a user-\/selected number of years. It was developed for the SNHU CS-\/210 Project Two assignment.
+
+The application accepts an initial investment, a recurring monthly deposit, an annual interest rate, and an investment duration. It then prints monthly balance tables for:
+
+
+\begin{DoxyEnumerate}
+\item Growth without additional monthly deposits.
+\item Growth with the configured monthly deposit.
+\end{DoxyEnumerate}
+
+Each report includes the month, opening amount, deposited amount, total before interest, interest earned, and closing balance.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Requirements}{Requirements}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item A C++ compiler with C++20 support
+\item GNU Make (for the Makefile workflow)
+\item Doxygen (only required to regenerate the API documentation)
+\end{DoxyItemize}
+
+The project also includes a Visual Studio project file, \href{./BankingApp.vcxproj}{\texttt{{\ttfamily Banking\+App.\+vcxproj}}}, configured for C++20.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Building and running}{Building and running}}\label{md__r_e_a_d_m_e_autotoc_md2}
+From the project directory, run:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ build}
+\DoxyCodeLine{make\ run}
+
+\end{DoxyCode}
+
+
+The executable is written to {\ttfamily build/\+bin/\+banking} on mac\+OS and Linux, or {\ttfamily build/\+bin/\+banking.\+exe} on Windows.
+
+The {\ttfamily build} target also regenerates the Doxygen documentation. To build, regenerate documentation, and run the program in one command:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+
+
+For a debug build with debugging symbols:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ debug}
+
+\end{DoxyCode}
+
+
+To remove compiled object files and the executable:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{Building without Make}{Building without Make}}\label{md__r_e_a_d_m_e_autotoc_md3}
+The two source files can be compiled directly with any C++20 compiler:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c++\ -\/std=c++20\ -\/Wall\ -\/Wextra\ -\/pedantic\ rf-\/banking.cpp\ rf-\/bankingMain.cpp\ -\/o\ banking}
+\DoxyCodeLine{./banking}
+
+\end{DoxyCode}
+
+
+On Windows, open {\ttfamily Banking\+App.\+slnx} or {\ttfamily Banking\+App.\+vcxproj} in Visual Studio and build the desired configuration.\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Using the application}{Using the application}}\label{md__r_e_a_d_m_e_autotoc_md4}
+When the program starts, enter the following values when prompted:
+
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Input  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Accepted values  \\
+Initial investment  &Starting balance  &At least {\ttfamily 1.\+0}  \\
+Monthly deposit  &Amount added each month in the deposit report  &At least {\ttfamily 1.\+0}  \\
+Interest rate  &Annual interest rate, entered as a percentage  &At least {\ttfamily 1.\+0}  \\
+Number of years  &Projection length  &At least {\ttfamily 1}  \\
+\end{DoxyTable}
+
+
+Input is read and validated as complete lines. The program continues prompting until each value is numeric, contains no trailing characters, and meets its minimum value.
+
+After the input summary is displayed, press {\bfseries{Enter}} to generate the reports. Press {\bfseries{Enter}} at the final prompt to exit.\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Calculation model}{Calculation model}}\label{md__r_e_a_d_m_e_autotoc_md5}
+The annual interest rate is converted to a monthly decimal rate:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{monthly\ rate\ =\ annual\ rate\ /\ 100\ /\ 12}
+
+\end{DoxyCode}
+
+
+For every month, the application:
+
+
+\begin{DoxyEnumerate}
+\item Uses the previous month\textquotesingle{}s closing balance as the opening balance.
+\item Adds the monthly deposit when generating the deposit report.
+\item Calculates interest on the resulting total.
+\item Adds the interest to produce the closing balance.
+\end{DoxyEnumerate}
+
+The report values are displayed with two decimal places. The calculation continues from the unrounded internal {\ttfamily double} values.\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Project structure}{Project structure}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}File or directory  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Purpose  \\
+\href{./rf-banking.h}{\texttt{{\ttfamily rf-\/banking.\+h}}}  &{\ttfamily \doxylink{class_banking}{Banking}} class declaration and report formatting constants  \\
+\href{./rf-banking.cpp}{\texttt{{\ttfamily rf-\/banking.\+cpp}}}  &Balance calculations, formatting, and report output  \\
+\href{./rf-bankingMain.cpp}{\texttt{{\ttfamily rf-\/banking\+Main.\+cpp}}}  &Program entry point and input validation helpers  \\
+\href{./Makefile}{\texttt{{\ttfamily Makefile}}}  &Build, run, debug, documentation, and cleanup targets  \\
+\href{./BankingApp.vcxproj}{\texttt{{\ttfamily Banking\+App.\+vcxproj}}}  &Visual Studio project configuration  \\
+\href{./Doxyfile}{\texttt{{\ttfamily Doxyfile}}}  &Doxygen configuration  \\
+\href{./html/}{\texttt{{\ttfamily html/}}}  &Generated HTML API documentation  \\
+\href{./latex/}{\texttt{{\ttfamily latex/}}}  &Generated La\+TeX documentation  \\
+\end{DoxyTable}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{API documentation}{API documentation}}\label{md__r_e_a_d_m_e_autotoc_md7}
+To regenerate the documentation after changing the source:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ docs}
+
+\end{DoxyCode}
+
+
+Open \href{./html/index.html}{\texttt{{\ttfamily html/\+index.\+html}}} in a browser to browse the generated class and function reference.\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Notes}{Notes}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item The program prints both report types during each run.
+\item The monthly deposit is applied before monthly interest is calculated.
+\item The application is intentionally interactive and does not accept command-\/line arguments or read from an input file. 
+\end{DoxyItemize}
