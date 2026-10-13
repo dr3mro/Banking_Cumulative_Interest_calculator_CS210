@@ -1,32 +1,41 @@
-TARGET := banking
 SOURCES := rf-banking.cpp rf-bankingMain.cpp
 OBJDIR := build/obj
+BINDIR := build/bin
+TARGET := $(BINDIR)/banking
 OBJECTS := $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
 CXX ?= c++
 CXXFLAGS ?= -std=c++20 -Wall -Wextra -pedantic
+DOXYGEN ?= doxygen
 
 ifeq ($(OS),Windows_NT)
-	TARGET := banking.exe
+	TARGET := $(BINDIR)/banking.exe
 	RM := del /Q
-	MKDIR := if not exist build\obj mkdir build\obj
+	MKDIR := if not exist build\obj mkdir build\obj && if not exist build\bin mkdir build\bin
 	RUN := $(TARGET)
 else
 	RM := rm -f
-	MKDIR := mkdir -p
+	MKDIR := mkdir -p $(OBJDIR) $(BINDIR)
 	RUN := ./$(TARGET)
 endif
 
-.PHONY: all build run clean debug
+.PHONY: all build docs run clean debug
 
 all: clean build run
 
-build: $(TARGET)
+build: docs
+	$(MAKE) $(TARGET)
 
-$(TARGET): $(OBJDIR) $(OBJECTS)
+docs: Doxyfile
+	$(DOXYGEN) $<
+
+$(TARGET): $(OBJDIR) $(BINDIR) $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $@
 
 $(OBJDIR):
+	$(MKDIR)
+
+$(BINDIR):
 	$(MKDIR)
 
 $(OBJDIR)/%.o: %.cpp rf-banking.h | $(OBJDIR)

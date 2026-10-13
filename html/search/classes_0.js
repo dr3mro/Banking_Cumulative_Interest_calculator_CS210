@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['banking_0',['Banking',['../class_banking.html',1,'']]]
+  ['banking_0',['Banking',['../classBanking.html',1,'']]]
 ];
