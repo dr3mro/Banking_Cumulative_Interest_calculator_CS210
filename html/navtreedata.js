@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "BankingApp", "index.html", [
     [ "Banking Application", "md__r_e_a_d_m_e.html", [
       [ "Requirements", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
       [ "Building and running", "md__r_e_a_d_m_e.html#autotoc_md2", [
