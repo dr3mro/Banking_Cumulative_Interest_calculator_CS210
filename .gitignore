@@ -1,0 +1,28 @@
+# Build output
+/build/
+**/build/
+
+# C/C++ compiler and linker artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.dylib
+*.exe
+*.out
+
+# Visual Studio and local IDE files
+.vs/
+*.suo
+*.user
+ipch/
+
+# Debugger and profiling output
+*.dSYM/
+*.pdb
+*.ilk
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

@@ -25,7 +25,17 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
-    [ "Banking_Cumulative_Interest_calculator_CS210", "md_README.html", null ],
+    [ "Banking Application", "md__r_e_a_d_m_e.html", [
+      [ "Requirements", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Building and running", "md__r_e_a_d_m_e.html#autotoc_md2", [
+        [ "Building without Make", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
+      ] ],
+      [ "Using the application", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Calculation model", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Project structure", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "API documentation", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Notes", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -45,5 +55,6 @@ var NAVTREEINDEX =
 "annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

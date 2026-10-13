@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['getinitialinvestment_0',['getInitialInvestment',['../classBanking.html#abe6c587098ce2ccf5b586a18e6c0e06b',1,'Banking']]],
-  ['getinterestrate_1',['getInterestRate',['../classBanking.html#a21e746af3743f6863051c5ba70fa17e8',1,'Banking']]],
-  ['getmonthlydeposit_2',['getMonthlyDeposit',['../classBanking.html#a7245c8851253afb4281ef00900ae0438',1,'Banking']]],
-  ['getnumyears_3',['getNumYears',['../classBanking.html#a71bab4fe267aeda4c641fed8b075fe74',1,'Banking']]]
+  ['displaybalances_0',['displayBalances',['../class_banking.html#aa1c02ddd2d641ccf968eee0d8b27f5f5',1,'Banking']]],
+  ['documentation_1',['API documentation',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]]
 ];
