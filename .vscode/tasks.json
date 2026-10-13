@@ -1,0 +1,89 @@
+{
+    "tasks": [
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "presentation": {
+                "reveal": "always",
+                "focus": true
+            },
+            "command": "make",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Clean",
+            "dependsOrder": "sequence",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Builds all BankingApp sources through the Makefile."
+        },
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "presentation": {
+                "reveal": "always",
+                "focus": true
+            },
+            "command": "make",
+            "args": [
+                "debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Clean",
+            "dependsOrder": "sequence",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Builds all BankingApp sources through the Makefile."
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "presentation": {
+                "reveal": "always",
+                "focus": true
+            },
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Cleans all BankingApp build artifacts through the Makefile."
+        },
+        {
+            "label": "C/C++: Compile and Run BankingApp",
+            "type": "shell",
+            "presentation": {
+                "reveal": "always",
+                "focus": true
+            },
+            "command": "make",
+            "args": [
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "dependsOn": "Build Release",
+            "dependsOrder": "sequence",
+            "detail": "Builds and runs BankingApp through the Makefile."
+        }
+    ],
+    "version": "2.0.0"
+}

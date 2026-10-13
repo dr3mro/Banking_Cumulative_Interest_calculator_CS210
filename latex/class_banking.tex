@@ -1,0 +1,287 @@
+\doxysection{Banking Class Reference}
+\hypertarget{class_banking}{}\label{class_banking}\index{Banking@{Banking}}
+
+
+Stores investment inputs and generates balance reports.  
+
+
+
+
+{\ttfamily \+\#include $<$rf-\/banking.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_banking_aba24f1c54fff11780126374a79ed36b2}\label{class_banking_aba24f1c54fff11780126374a79ed36b2} 
+{\bfseries Banking} ()=default
+\begin{DoxyCompactList}\small\item\em Creates an object with zero-\/valued investment inputs. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_afb3d0b7bf29956df7cf606ccc55be31e}{set\+Initial\+Investment}} (double initial\+Investment)
+\begin{DoxyCompactList}\small\item\em Sets the original investment amount. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_a930731b2bba93a7e3a15640c11543112}{set\+Num\+Years}} (int num\+Years)
+\begin{DoxyCompactList}\small\item\em Sets the investment duration. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_a397d86c470312ee211efcfa96329ff5c}{set\+Monthly\+Deposit}} (double monthly\+Deposit)
+\begin{DoxyCompactList}\small\item\em Sets the recurring monthly deposit. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_ae705e248299146619f549f829b243c66}{set\+Interest\+Rate}} (double interest\+Rate)
+\begin{DoxyCompactList}\small\item\em Sets the annual interest rate. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_banking_a71bab4fe267aeda4c641fed8b075fe74}{get\+Num\+Years}} () const
+\begin{DoxyCompactList}\small\item\em Returns the investment duration. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_banking_abe6c587098ce2ccf5b586a18e6c0e06b}{get\+Initial\+Investment}} () const
+\begin{DoxyCompactList}\small\item\em Returns the original investment amount. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_banking_a7245c8851253afb4281ef00900ae0438}{get\+Monthly\+Deposit}} () const
+\begin{DoxyCompactList}\small\item\em Returns the recurring monthly deposit. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_banking_a21e746af3743f6863051c5ba70fa17e8}{get\+Interest\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Returns the annual interest rate. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_aa1c02ddd2d641ccf968eee0d8b27f5f5}{display\+Balances}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and prints both balance reports. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_banking_a2160608d123058ad96d144ea41feedc2}{center\+Text}} (string text, int length, char fill=\textquotesingle{} \textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Centers text within a field of the requested length. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_a06d2e0ffc3497dc4f0ed9c63d27f50d8}{print\+Char}} (int times, char char\+To\+Print=\textquotesingle{} \textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Prints a repeated character string. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_banking_a0e3403cfea630d5dcbd708ac39a984a1}{print\+Input\+Details}} ()
+\begin{DoxyCompactList}\small\item\em Prints the configured investment input values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores investment inputs and generates balance reports. 
+
+\label{class_banking_doc-func-members}
+\Hypertarget{class_banking_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_banking_a2160608d123058ad96d144ea41feedc2}\index{Banking@{Banking}!centerText@{centerText}}
+\index{centerText@{centerText}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{centerText()}{centerText()}}
+{\footnotesize\ttfamily \label{class_banking_a2160608d123058ad96d144ea41feedc2} 
+string Banking::\+center\+Text (\begin{DoxyParamCaption}\item[{string}]{text}{, }\item[{int}]{length}{, }\item[{char}]{fill}{ = {\ttfamily \textquotesingle{}~\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Centers text within a field of the requested length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text to center. \\
+\hline
+{\em length} & Total width of the resulting field. \\
+\hline
+{\em fill} & Character used to pad the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The padded, centered text, or the original text if it is too long.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text to center. \\
+\hline
+{\em length} & Total width of the resulting field. \\
+\hline
+{\em fill} & Character used to pad the field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The padded, centered text, or the original text if it is too long. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_aa1c02ddd2d641ccf968eee0d8b27f5f5}\index{Banking@{Banking}!displayBalances@{displayBalances}}
+\index{displayBalances@{displayBalances}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{displayBalances()}{displayBalances()}}
+{\footnotesize\ttfamily \label{class_banking_aa1c02ddd2d641ccf968eee0d8b27f5f5} 
+void Banking::\+display\+Balances (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates and prints both balance reports. 
+
+Displays both balance reports.
+
+\begin{DoxyReturn}{Returns}
+void This method calculates and prints the reports, then updates state. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_abe6c587098ce2ccf5b586a18e6c0e06b}\index{Banking@{Banking}!getInitialInvestment@{getInitialInvestment}}
+\index{getInitialInvestment@{getInitialInvestment}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{getInitialInvestment()}{getInitialInvestment()}}
+{\footnotesize\ttfamily \label{class_banking_abe6c587098ce2ccf5b586a18e6c0e06b} 
+double Banking::\+get\+Initial\+Investment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the original investment amount. 
+
+Gets the initial investment amount.
+
+\begin{DoxyReturn}{Returns}
+double The original amount invested. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a21e746af3743f6863051c5ba70fa17e8}\index{Banking@{Banking}!getInterestRate@{getInterestRate}}
+\index{getInterestRate@{getInterestRate}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{getInterestRate()}{getInterestRate()}}
+{\footnotesize\ttfamily \label{class_banking_a21e746af3743f6863051c5ba70fa17e8} 
+double Banking::\+get\+Interest\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the annual interest rate. 
+
+Gets the annual interest rate.
+
+\begin{DoxyReturn}{Returns}
+double The annual interest rate as a whole-\/number percentage. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a7245c8851253afb4281ef00900ae0438}\index{Banking@{Banking}!getMonthlyDeposit@{getMonthlyDeposit}}
+\index{getMonthlyDeposit@{getMonthlyDeposit}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{getMonthlyDeposit()}{getMonthlyDeposit()}}
+{\footnotesize\ttfamily \label{class_banking_a7245c8851253afb4281ef00900ae0438} 
+double Banking::\+get\+Monthly\+Deposit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the recurring monthly deposit. 
+
+Gets the recurring monthly deposit amount.
+
+\begin{DoxyReturn}{Returns}
+double The configured monthly deposit. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a71bab4fe267aeda4c641fed8b075fe74}\index{Banking@{Banking}!getNumYears@{getNumYears}}
+\index{getNumYears@{getNumYears}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{getNumYears()}{getNumYears()}}
+{\footnotesize\ttfamily \label{class_banking_a71bab4fe267aeda4c641fed8b075fe74} 
+int Banking::\+get\+Num\+Years (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the investment duration. 
+
+Gets the investment duration.
+
+\begin{DoxyReturn}{Returns}
+int The number of years configured for the investment. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a06d2e0ffc3497dc4f0ed9c63d27f50d8}\index{Banking@{Banking}!printChar@{printChar}}
+\index{printChar@{printChar}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{printChar()}{printChar()}}
+{\footnotesize\ttfamily \label{class_banking_a06d2e0ffc3497dc4f0ed9c63d27f50d8} 
+void Banking::\+print\+Char (\begin{DoxyParamCaption}\item[{int}]{times}{, }\item[{char}]{char\+To\+Print}{ = {\ttfamily \textquotesingle{}~\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Prints a repeated character string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em times} & Number of times to repeat the character. \\
+\hline
+{\em char\+To\+Print} & Character to repeat.\\
+\hline
+{\em times} & Number of times to repeat the character. \\
+\hline
+{\em char\+To\+Print} & Character to repeat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void This method writes the generated string to standard output. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a0e3403cfea630d5dcbd708ac39a984a1}\index{Banking@{Banking}!printInputDetails@{printInputDetails}}
+\index{printInputDetails@{printInputDetails}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{printInputDetails()}{printInputDetails()}}
+{\footnotesize\ttfamily \label{class_banking_a0e3403cfea630d5dcbd708ac39a984a1} 
+void Banking::\+print\+Input\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the configured investment input values. 
+
+Displays the values currently entered for the investment.
+
+\begin{DoxyReturn}{Returns}
+void This method writes the input summary to standard output. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_afb3d0b7bf29956df7cf606ccc55be31e}\index{Banking@{Banking}!setInitialInvestment@{setInitialInvestment}}
+\index{setInitialInvestment@{setInitialInvestment}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{setInitialInvestment()}{setInitialInvestment()}}
+{\footnotesize\ttfamily \label{class_banking_afb3d0b7bf29956df7cf606ccc55be31e} 
+void Banking::\+set\+Initial\+Investment (\begin{DoxyParamCaption}\item[{double}]{initial\+Investment}{}\end{DoxyParamCaption})}
+
+
+
+Sets the original investment amount. 
+
+Sets the initial investment amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Investment} & Amount invested at the start of the calculation.\\
+\hline
+{\em initial\+Investment} & Amount invested at the start of the calculation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void This method stores the value and initializes the starting balance. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_ae705e248299146619f549f829b243c66}\index{Banking@{Banking}!setInterestRate@{setInterestRate}}
+\index{setInterestRate@{setInterestRate}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{setInterestRate()}{setInterestRate()}}
+{\footnotesize\ttfamily \label{class_banking_ae705e248299146619f549f829b243c66} 
+void Banking::\+set\+Interest\+Rate (\begin{DoxyParamCaption}\item[{double}]{interest\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Sets the annual interest rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interest\+Rate} & Annual interest rate as a whole-\/number percentage.\\
+\hline
+{\em interest\+Rate} & The interest rate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void This method stores the annual rate as a whole-\/number percentage. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a397d86c470312ee211efcfa96329ff5c}\index{Banking@{Banking}!setMonthlyDeposit@{setMonthlyDeposit}}
+\index{setMonthlyDeposit@{setMonthlyDeposit}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{setMonthlyDeposit()}{setMonthlyDeposit()}}
+{\footnotesize\ttfamily \label{class_banking_a397d86c470312ee211efcfa96329ff5c} 
+void Banking::\+set\+Monthly\+Deposit (\begin{DoxyParamCaption}\item[{double}]{monthly\+Deposit}{}\end{DoxyParamCaption})}
+
+
+
+Sets the recurring monthly deposit. 
+
+Sets the recurring monthly deposit amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em monthly\+Deposit} & Amount deposited each month in the deposit report.\\
+\hline
+{\em monthly\+Deposit} & The monthly deposit amount. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void This method stores the recurring deposit amount. 
+\end{DoxyReturn}
+\Hypertarget{class_banking_a930731b2bba93a7e3a15640c11543112}\index{Banking@{Banking}!setNumYears@{setNumYears}}
+\index{setNumYears@{setNumYears}!Banking@{Banking}}
+\doxysubsubsection{\texorpdfstring{setNumYears()}{setNumYears()}}
+{\footnotesize\ttfamily \label{class_banking_a930731b2bba93a7e3a15640c11543112} 
+void Banking::\+set\+Num\+Years (\begin{DoxyParamCaption}\item[{int}]{num\+Years}{}\end{DoxyParamCaption})}
+
+
+
+Sets the investment duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Years} & Number of years to include in each report.\\
+\hline
+{\em num\+Years} & The number of years. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void This method stores the investment duration. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+rf-\/banking.\+h\item 
+rf-\/banking.\+cpp\end{DoxyCompactItemize}
